@@ -1,5 +1,5 @@
 {
-  "name": "example-hardhat-project",
+  "name": "hedera-example-hardhat-project",
   "version": "1.0.0",
   "description": "This is a example hardhat project",
   "main": "index.js",
@@ -22,11 +22,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theekrystallee/example-hardhat-project.git"
+    "url": "git+https://github.com/hashgraph/hedera-hardhat-example-project.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/georgi-l95/example-hardhat-project/issues"
+    "url": "https://github.com/hashgraph/hedera-hardhat-example-project/issues"
   },
-  "homepage": "https://github.com/georgi-l95/example-hardhat-project#readme"
+  "homepage": "https://github.com/hashgraph/hedera-hardhat-example-project"
 }
