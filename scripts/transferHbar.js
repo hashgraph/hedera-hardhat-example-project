@@ -1,7 +1,9 @@
 const { ethers } = require("hardhat");
 
 module.exports = async (amount = 100_000_000_000) => {
+  //Assign the first signer, which comes from the first privateKey from our configuration in hardhat.config.js, to a wallet variable.
   const wallet = (await ethers.getSigners())[0];
+  //Assign the second signer, which comes from the second privateKey from our configuration in hardhat.config.js, to a wallet variable.
   const walletReceiver = (await ethers.getSigners())[1];
 
   console.log(`Balance before tx: ${await walletReceiver.getBalance()}`);

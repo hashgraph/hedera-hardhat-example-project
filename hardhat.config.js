@@ -2,6 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomiclabs/hardhat-ethers");
 
+//define hardhat task here, which can be accessed in our test by using hre.run('taskName')
 task("show-balance", async () => {
   const showBalance = require("./scripts/showBalance");
   return showBalance();
