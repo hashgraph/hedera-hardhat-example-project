@@ -43,7 +43,7 @@ module.exports = {
       },
     },
   },
-  defaultNetwork: "testnet",
+  defaultNetwork: "local",
   networks: {
     local: {
       url: process.env.RELAY_ENDPOINT,
