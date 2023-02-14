@@ -29,5 +29,5 @@ npx hardhat compile
 REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
-npx hardhat deploy-contract --network <network name>
+npx hardhat deploy-contract
 ```
