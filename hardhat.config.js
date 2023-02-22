@@ -4,7 +4,7 @@ require("@nomiclabs/hardhat-ethers");
 //import dotenv library to access environment variables stored in .env file
 require("dotenv").config();
 
-//defines hardhat task here, which can be accessed in our test by using hre.run('taskName')
+//define hardhat task here, which can be accessed in our test file (test/rpc.js) by using hre.run('taskName')
 task("show-balance", async () => {
   const showBalance = require("./scripts/showBalance");
   return showBalance();
@@ -45,15 +45,26 @@ module.exports = {
     },
   },
   //this specifies which network should be used when running Hardhat tasks
-  defaultNetwork: "testnet",
+  defaultNetwork: "local",
   networks: {
-    testnet: {
-      //testnet endpoint from TESTNET_ENDPOINT variable in .env the file
-      url: process.env.TESTNET_ENDPOINT,
-      //test Ethereum account private keys that are accessible for the testnet
+    local: {
+      //local JSON-RPC relay endpoint from the RELAY_ENDPOINT variable in the project .env the file
+      url: process.env.RELAY_ENDPOINT,
+      //two local node Hedera account ECDSA private keys
+      //the public address for the account is derived from the private key
       accounts: [
-        process.env.TESTNET_OPERATOR_PRIVATE_KEY,
-        process.env.TESTNET_RECEIVER_PRIVATE_KEY,
+        process.env.LOCAL_OPERATOR_PRIVATE_KEY, 
+        process.env.LOCAL_RECEIVER_PRIVATE_KEY,
+      ],
+    },
+    testnet: {
+      //HashIO testnet endpoint from the TESTNET_ENDPOINT variable in the project .env the file
+      url: "https://testnet.hashio.io/api",
+      //two Hedera testnet account ECDSA private keys
+      //the public address for the account is derived from the private key
+      accounts: [ 
+        "0xb46751179bc8aa9e129d34463e46cd924055112eb30b31637b5081b56ad96129",
+     //   "0x484961ec6c67c270dc5659ea8bb61489967c6acc574d81b1e046e072d5d2436d", 
       ],
     },
   },
