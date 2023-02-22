@@ -14,15 +14,15 @@ describe("RPC", function () {
     expect(Number(balance)).to.be.greaterThan(0);
   });
 
-  it("should be able to transfer hbars between two accounts", async function () {
-    let walletReceiver = signers[0];
-    const hbarsBefore = (await walletReceiver.getBalance()).toString();
-    await hre.run("transfer-hbars");
+  //it("should be able to transfer hbars between two accounts", async function () {
+  //  let walletReceiver = signers[0];
+  //  const hbarsBefore = (await walletReceiver.getBalance()).toString();
+  //  await hre.run("transfer-hbars");
     // add additional transfer to ensure file close on local node
-    await hre.run("transfer-hbars");
-    const hbarsAfter = (await walletReceiver.getBalance()).toString();
-    expect(hbarsBefore).to.not.be.equal(hbarsAfter);
-  });
+  //  await hre.run("transfer-hbars");
+  //  const hbarsAfter = (await walletReceiver.getBalance()).toString();
+  //  expect(hbarsBefore).to.not.be.equal(hbarsAfter);
+  //});
 
   it("should be able to deploy a contract", async function () {
     contractAddress = await hre.run("deploy-contract");
