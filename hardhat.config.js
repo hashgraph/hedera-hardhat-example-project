@@ -49,7 +49,6 @@ module.exports = {
       //the public address for the account is derived from the private key
       accounts: [
         process.env.TESTNET_OPERATOR_PRIVATE_KEY,
-           "0x484961ec6c67c270dc5659ea8bb61489967c6acc574d81b1e046e072d5d2436d",
       ],
     },
   },
