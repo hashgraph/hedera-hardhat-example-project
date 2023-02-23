@@ -10,11 +10,6 @@ task("show-balance", async () => {
   return showBalance();
 });
 
-// task("transfer-hbars", async () => {
-//   const transferHbar = require("./scripts/transferHbar");
-//   return transferHbar();
-// });
-
 task("deploy-contract", async () => {
   const deployContract = require("./scripts/deployContract");
   return deployContract();
