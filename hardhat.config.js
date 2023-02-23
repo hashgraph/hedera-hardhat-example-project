@@ -45,7 +45,7 @@ module.exports = {
     },
   },
   //this specifies which network should be used when running Hardhat tasks
-  defaultNetwork: "local",
+  defaultNetwork: "testnet",
   networks: {
     local: {
       //local JSON-RPC relay endpoint from the RELAY_ENDPOINT variable in the project .env the file
@@ -60,11 +60,11 @@ module.exports = {
     testnet: {
       //HashIO testnet endpoint from the TESTNET_ENDPOINT variable in the project .env the file
       url: process.env.TESTNET_ENDPOINT,
-      //two Hedera testnet account ECDSA private keys
+      //the Hedera testnet account ECDSA private
       //the public address for the account is derived from the private key
       accounts: [
         process.env.TESTNET_OPERATOR_PRIVATE_KEY,
-        //   "0x484961ec6c67c270dc5659ea8bb61489967c6acc574d81b1e046e072d5d2436d",
+           "0x484961ec6c67c270dc5659ea8bb61489967c6acc574d81b1e046e072d5d2436d",
       ],
     },
   },
