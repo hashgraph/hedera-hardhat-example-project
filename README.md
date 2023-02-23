@@ -1,10 +1,10 @@
 # Hedera Hardhat Example Project
 
-The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the Hedera JSON RPC Relay.
+The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the Hedera JSON RPC Relay. For more information about Hardhat project check out their docs [here](https://hardhat.org/hardhat-runner/docs/guides/project-setup). 
 
 ## Project Files and Folders
 
-- `hardhat.config` - The Hardhat project configuration file reqiured for the project. This includes the Hedera testnet accounts, community JSON-RPC relay URL, and defines the Hard tasks.
+- `hardhat.config` - The Hardhat project configuration file reqiured for the project. This includes the Hedera testnet accounts, community JSON-RPC relay URL, and defines the Hardhat tasks.
 
 - `/contracts` - The folder that contains the Greeter smart contract. 
 
