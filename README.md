@@ -1,6 +1,6 @@
 # Hedera Hardhat Example Project
 
-The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the Hedera JSON PRC Relay.
+The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the Hedera JSON RPC Relay.
 
 ## Project Files and Folders
 
