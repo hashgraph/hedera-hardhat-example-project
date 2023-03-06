@@ -2,6 +2,8 @@
 
 The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the [Hedera JSON RPC Relay](https://github.com/hashgraph/hedera-json-rpc-relay). For more information about Hardhat projects check out their docs [here](https://hardhat.org/hardhat-runner/docs/guides/project-setup). 
 
+> :fire: Check out the step-by-step tutorial [here](https://docs.hedera.com/hedera/tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat).
+
 ## Project Files and Folders
 
 - `hardhat.config` - The Hardhat project configuration file reqiured for the project. This includes the Hedera testnet account private key, community JSON-RPC relay URL, and defines the Hardhat tasks.
