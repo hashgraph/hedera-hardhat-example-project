@@ -39,7 +39,7 @@ npm install
 npm install dotenv
 ```
 
-5. Get your ECDSA Hedera testnet account private key from the [Hedera Developer Portal](https://portal.hedera.com/register) and update the `.env.example` `TESTNET_OPERATOR_PRIVATE_KEY`
+5. Get your Hedera testnet account hex encoded private key from the [Hedera Developer Portal](https://portal.hedera.com/register) and update the `.env.example` `TESTNET_OPERATOR_PRIVATE_KEY`
 
 6. Rename `.env.example` to `.env`
 
