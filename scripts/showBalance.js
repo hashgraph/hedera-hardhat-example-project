@@ -25,7 +25,7 @@ module.exports = async () => {
   const wallet = (await ethers.getSigners())[0];
   //Wallet object (which is essentially signer object) has some built in functionality like getBalance, getAddress and more
   const balance = (await wallet.getBalance()).toString();
-  console.log(`The address ${wallet.address} has ${balance} tinybars`);
+  console.log(`The address ${wallet.address} has ${balance} weibars`);
 
   return balance;
 };
