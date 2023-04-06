@@ -35,23 +35,35 @@ cd hedera-hardhat-example-project
 ```shell
 npm install
 ```
-4. Install the dotenv package used to manage environment variables in a separate `.env` file, which is loaded at runtime
 
-```shell
-npm install dotenv
-```
+4. Get your Hedera testnet account hex encoded private key from the [Hedera Developer Portal](https://portal.hedera.com/register) and update the `.env.example` `TESTNET_OPERATOR_PRIVATE_KEY`
 
-5. Get your Hedera testnet account hex encoded private key from the [Hedera Developer Portal](https://portal.hedera.com/register) and update the `.env.example` `TESTNET_OPERATOR_PRIVATE_KEY`
+5. Rename `.env.example` to `.env`
 
-6. Rename `.env.example` to `.env`
-
-7. Run the test script from the root directory of the project. The default network is set to "testnet."
+6. Run the test script from the root directory of the project. The default network is set to "testnet."
 
 ```shell
 npx hardhat test
 ```
 
-8. Deploy the smart contract
+Expect an output similar to the following:
+```shell
+  RPC
+The address 0xe0b73F64b0de6032b193648c08899f20b5A6141D has 10000000000000000000000 weibars
+    ✔ should be able to get the account balance (1678ms)
+Greeter deployed to: 0xD9d0c5C0Ff85758BdF05A7636F8036d4D065F5B6
+    ✔ should be able to deploy a contract (11456ms)
+Contract call result: initial_msg
+    ✔ should be able to make a contract view call (1249ms)
+Updated call result: updated_msg
+Contract call result: updated_msg
+    ✔ should be able to make a contract call (6806ms)
+
+
+  4 passing (22s)
+```
+
+7. Run the following command if you want only to deploy the smart contract
 
 ```shell
 npx hardhat deploy-contract
