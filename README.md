@@ -15,7 +15,7 @@ This Hedera Hardhat Example Project offers boilerplate code for testing and depl
 -  `/scripts` - This folder contains essential JavaScript files for tasks such as deploying smart contracts to the Hedera network. 
 
 - `.env.example` - This file is contains the environment variables needed by the project. Copy this file to a `.env` file and fill in the actual values before starting the development server or deploying smart contracts. To expedite your test setup and deployment, some variables are pre-filled in this example file.
-- 
+  
 ## Setup
 
 1. Clone this repo to your local machine:
