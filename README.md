@@ -1,21 +1,21 @@
 # Hedera Hardhat Example Project
 
-The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera smart contract using a community instance of the [Hedera JSON RPC Relay](https://github.com/hashgraph/hedera-json-rpc-relay). For more information about Hardhat projects check out their docs [here](https://hardhat.org/hardhat-runner/docs/guides/project-setup). 
+This Hedera Hardhat Example Project offers boilerplate code for testing and deploying smart contracts via Hardhat. It includes configuration for both community-hosted and local ([Hedera Local Node](https://github.com/hashgraph/hedera-local-node)) instances of the [Hedera JSON RPC Relay](https://github.com/hashgraph/hedera-json-rpc-relay). 
 
-> :fire: Check out the step-by-step tutorial [here](https://docs.hedera.com/hedera/tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat).
+:fire: Check out the step-by-step tutorial [here](https://docs.hedera.com/hedera/tutorials/smart-contracts/deploy-a-smart-contract-using-hardhat-and-hedera-json-rpc-relays).
 
 ## Project Files and Folders
 
-- `hardhat.config` - The Hardhat project configuration file reqiured for the project. This includes the Hedera testnet account private key, community JSON-RPC relay URL, and defines the Hardhat tasks.
+- `hardhat.config.js` - This is the configuration file for your Hardhat project development environment. It centralizes and defines various settings like Hedera networks, Solidity compiler versions, plugins, and tasks.
 
-- `/contracts` - The folder that contains the Greeter smart contract. 
+- `/contracts` - This folder holds all the Solidity smart contract files that make up the core logic of your dApp. Contracts are written in `.sol` files.
 
-- `/test` - The folder that contains the test file that tests the Greeter.sol smart contract.
+- `/test` - This folder contains test scripts that help validate your smart contracts' functionality. These tests are crucial for ensuring that your contracts behave as expected.
+  
+-  `/scripts` - This folder contains essential JavaScript files for tasks such as deploying smart contracts to the Hedera network. 
 
--  `/scripts` - The folder that contains the Hardhat project scripts.
-
-- `.env` - The file that stores the environment variables like the testnet account private key and community JSON-RPC url
-
+- `.env.example` - This file is contains the environment variables needed by the project. Copy this file to a `.env` file and fill in the actual values before starting the development server or deploying smart contracts. To expedite your test setup and deployment, some variables are pre-filled in this example file.
+  
 ## Setup
 
 1. Clone this repo to your local machine:
@@ -24,7 +24,7 @@ The Hedera Hardhat Example Project demonstrates how to test and deploy a Hedera 
 git clone https://github.com/hashgraph/hedera-hardhat-example-project.git
 ```
 
-2. Once you've cloned the repository, open your IDE terminal and navigate to the root directory of the project.
+2. Once you've cloned the repository, open your IDE terminal and navigate to the root directory of the project.:
 
 ```shell
 cd hedera-hardhat-example-project
@@ -35,26 +35,28 @@ cd hedera-hardhat-example-project
 ```shell
 npm install
 ```
-4. Install the dotenv package used to manage environment variables in a separate `.env` file, which is loaded at runtime
+4. Install the dotenv package used to manage environment variables in a separate `.env` file, which is loaded at runtime:
 
 ```shell
 npm install dotenv
 ```
 
-5. Get your Hedera testnet account hex encoded private key from the [Hedera Developer Portal](https://portal.hedera.com/register) and update the `.env.example` `TESTNET_OPERATOR_PRIVATE_KEY`
+5. Rename `.env.example` to `.env`
 
-6. Rename `.env.example` to `.env`
-
-7. Run the test script from the root directory of the project. The default network is set to "testnet."
-
+6. Run the test script from the root directory of the project. 
 ```shell
 npx hardhat test
 ```
 
-8. Deploy the smart contract
+8. Deploy the smart contract:
 
 ```shell
 npx hardhat deploy-contract
+```
+
+Alternatively, if you have multiple networks configured in your Hardhat config file, target the network to deploy to:
+```shell
+npx hardhat run --network <your-network> scripts/deployContract.js
 ```
 
 # Contributing
