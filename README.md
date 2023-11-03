@@ -24,7 +24,7 @@ This Hedera Hardhat Example Project offers boilerplate code for testing and depl
 git clone https://github.com/hashgraph/hedera-hardhat-example-project.git
 ```
 
-2. Once you've cloned the repository, open your IDE terminal and navigate to the root directory of the project.
+2. Once you've cloned the repository, open your IDE terminal and navigate to the root directory of the project.:
 
 ```shell
 cd hedera-hardhat-example-project
@@ -35,7 +35,7 @@ cd hedera-hardhat-example-project
 ```shell
 npm install
 ```
-4. Install the dotenv package used to manage environment variables in a separate `.env` file, which is loaded at runtime
+4. Install the dotenv package used to manage environment variables in a separate `.env` file, which is loaded at runtime:
 
 ```shell
 npm install dotenv
@@ -43,16 +43,20 @@ npm install dotenv
 
 5. Rename `.env.example` to `.env`
 
-6. Run the test script from the root directory of the project. The default network is set to "local."
-
+6. Run the test script from the root directory of the project. 
 ```shell
 npx hardhat test
 ```
 
-8. Deploy the smart contract
+8. Deploy the smart contract:
 
 ```shell
 npx hardhat deploy-contract
+```
+
+Alternatively, if you have multiple networks configured in your Hardhat config file, target the network to deploy to:
+```shell
+npx hardhat run --network <your-network> scripts/deployContract.js
 ```
 
 # Contributing
