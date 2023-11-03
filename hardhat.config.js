@@ -1,10 +1,10 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomiclabs/hardhat-ethers");
-//import dotenv library to access environment variables stored in .env file
+// Import dotenv module to access variables stored in the .env file
 require("dotenv").config();
 
-//define hardhat task here, which can be accessed in our test file (test/rpc.js) by using hre.run('taskName')
+// Define Hardhat tasks here, which can be accessed in our test file (test/rpc.js) by using hre.run('taskName')
 task("show-balance", async () => {
   const showBalance = require("./scripts/showBalance");
   return showBalance();
@@ -39,17 +39,40 @@ module.exports = {
       },
     },
   },
-  //this specifies which network should be used when running Hardhat tasks
-  defaultNetwork: "testnet",
+  // This specifies network configurations used when running Hardhat tasks
+  defaultNetwork: "local",
   networks: {
-    testnet: {
-      //HashIO testnet endpoint from the TESTNET_ENDPOINT variable in the project .env the file
-      url: process.env.TESTNET_ENDPOINT,
-      //the Hedera testnet account ECDSA private
-      //the public address for the account is derived from the private key
-      accounts: [
-        process.env.TESTNET_OPERATOR_PRIVATE_KEY,
-      ],
+    local: {
+      // Your Hedera Local Node address pulled from the .env file
+      url: process.env.LOCAL_NODE_ENDPOINT,
+      // Your local node operator private key pulled from the .env file
+      accounts: [process.env.LOCAL_NODE_OPERATOR_PRIVATE_KEY],
     },
+    testnet: {
+      // HashIO testnet endpoint from the TESTNET_ENDPOINT variable in the .env file
+      url: process.env.TESTNET_ENDPOINT,
+      // Your ECDSA account private key pulled from the .env file
+      accounts: [process.env.TESTNET_OPERATOR_PRIVATE_KEY],
+    },
+
+    /**
+     * Uncomment the following to add a mainnet network configuration
+     */
+    //   mainnet: {
+    //     // HashIO mainnet endpoint from the MAINNET_ENDPOINT variable in the .env file
+    //     url: process.env.MAINNET_ENDPOINT,
+    //     // Your ECDSA account private key pulled from the .env file
+    //     accounts: [process.env.MAINNET_OPERATOR_PRIVATE_KEY],
+    // },
+
+    /**
+     * Uncomment the following to add a previewnet network configuration
+     */
+    //   previewnet: {
+    //     // HashIO previewnet endpoint from the PREVIEWNET_ENDPOINT variable in the .env file
+    //     url: process.env.PREVIEWNET_ENDPOINT,
+    //     // Your ECDSA account private key pulled from the .env file
+    //     accounts: [process.env.PREVIEWNET_OPERATOR_PRIVATE_KEY],
+    // },
   },
 };
